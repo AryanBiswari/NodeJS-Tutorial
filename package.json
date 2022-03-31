@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-tutorial",
+  "version": "1.0.0",
+  "description": "this is node js tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aryan biswari",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1"
+  }
+}
