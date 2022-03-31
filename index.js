@@ -1,8 +1,13 @@
+//this is basic commands
 // console.log("Hello Aryan");
 // let a = 20;
 // let b = 30;
 // let c = a+b;
 // console.log(c);
+
+
+
+//this is basic api
 const http = require('http');
 const data = require('./data');
 http.createServer((req,res)=>{
@@ -10,6 +15,12 @@ http.createServer((req,res)=>{
     res.write(JSON.stringify(data));
     res.end();
 }).listen(5000);
+
+
+
+
+
+//below opeartions related to files crud methodology
 // const fs = require("fs")
 // const path = require("path");
 // const dirPath = path.join(__dirname,"files-operations");
