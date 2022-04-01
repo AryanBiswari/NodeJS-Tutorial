@@ -7,8 +7,15 @@
     <title>Index page</title>
 </head>
 <body>
+    <%- include('common/header')%>
     <h1>Welcome Master <%= user.name %></h1>
     <h2>Your email address is <%= user.email %></h2>
-    <h3>You lived in <%= user.city %></h3> 
+    <h3>You lived in <%= user.city %></h3>
+    <h3>You lived in <%= user.country %></h3> 
+    <ol>
+        <% user.skills.forEach((i)=>{%>
+            <li><%= i %></li>
+        <% }) %>
+    </ol>
 </body>
 </html>

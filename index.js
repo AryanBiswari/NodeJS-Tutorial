@@ -59,7 +59,9 @@ app.get('/', (req, res) => {
     const user = {
         name: 'Aryan Biswari',
         email: 'aryanbiswari14@gmail.com',
-        city: 'gwalior'
+        city: 'gwalior',
+        country: 'India',
+        skills: ['c++', 'React', 'Express', 'Node', 'MongoDB', 'HTML', 'CSS', 'JavaScript']
     }
     res.render('index.ejs',{user});
 })
