@@ -8,13 +8,13 @@
 
 
 //this is basic api
-const http = require('http');
-const data = require('./data');
-http.createServer((req,res)=>{
-    res.writeHead(200,{'Content-Type': 'application/json'});
-    res.write(JSON.stringify(data));
-    res.end();
-}).listen(5000);
+// const http = require('http');
+// const data = require('./data');
+// http.createServer((req,res)=>{
+//     res.writeHead(200,{'Content-Type': 'application/json'});
+//     res.write(JSON.stringify(data));
+//     res.end();
+// }).listen(5000);
 
 
 
@@ -44,3 +44,29 @@ http.createServer((req,res)=>{
 //         console.log(item);
 //     })
 // })
+
+
+
+//how to setup ejs (template engine)
+const express = require('express');
+const app = express();
+const path = require('path');
+const publicPath = path.join(__dirname, 'public');
+
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    const user = {
+        name: 'Aryan Biswari',
+        email: 'aryanbiswari14@gmail.com',
+        city: 'gwalior'
+    }
+    res.render('index.ejs',{user});
+})
+
+app.get('/profile', (req, res) => {
+    res.render('profile');
+})
+
+
+app.listen(5000);
