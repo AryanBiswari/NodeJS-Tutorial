@@ -7,9 +7,30 @@ async function getData()
 {
     let result = await client.connect();
     let db = result.db(database);
-    let collection = db.collection('products');
-    let res = await collection.find({}).toArray();
-    console.log(res);
+    return db.collection('products');
+    // let res = await collection.find({}).toArray();
+    // console.log(res);
 }
 
-getData();
+//get all data inside collection
+// getData().then((resp)=> {
+//     resp.find().toArray().then((products)=>{
+//         console.log(products);
+//     })
+// });
+
+//get single data inside collection
+// getData().then((resp)=> {
+//     resp.find({brands : "samsung"}).toArray().then((products)=>{
+//         console.log(products);
+//     })
+// })
+
+//modern format
+const main = async ()=> {
+    let data = await getData();
+    data = await data.find({brands:"samsung"}).toArray();
+    console.log(data);
+}
+
+main();
