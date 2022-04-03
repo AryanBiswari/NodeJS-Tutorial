@@ -4,13 +4,15 @@ const getData = require("./mongodb");
 const insert = async () => {
   const db = await getData();
   const result = await db.insert([
-      {
-    name: "nokia 3340",
-    brands: "nokia",
-      },{
-        name: "nord",
-        brands: "tesla",
-          }]);
+    {
+      name: "nokia 3340",
+      brands: "nokia",
+    },
+    {
+      name: "nord",
+      brands: "tesla",
+    },
+  ]);
   if (result.acknowledged) {
     console.log("data is already inserted");
   }
