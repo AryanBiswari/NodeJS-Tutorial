@@ -11,5 +11,28 @@ app.post('/create', async (req, res) => {
 });
 
 
+app.get('/get', async (req, res)=>{
+    let data = await Product.find();
+    res.send(data);
+    console.log(data);
+});
+
+app.delete('/delete/:_id', async (req, res)=>{
+    let data = await Product.deleteOne(req.params);
+    console.log(data);
+    res.send(data);
+})
+
+app.put('/update/:_id', async (req, res)=>{
+    let data = await Product.updateOne(req.params,
+        {
+            $set:req.body
+        }
+    );
+    console.log(data);
+    res.send(data);
+
+});
+
 app.listen(8000);
 
