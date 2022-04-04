@@ -1,5 +1,6 @@
 const express = require('express');
 const getData = require('./mongodb');
+const mongodb = require('mongodb');
 const app = express();
 
 app.use(express.json());
@@ -23,6 +24,14 @@ app.put('/', async (req, res) =>{
         {name :"redmi 100"},
         {$set : req.body}
     );
+    res.send(result);
+});
+
+
+app.delete('/:id', async (req, res) => {
+    console.log(req.params.id);
+    let data = await getData();
+    let result = await data.deleteOne({_id : new mongodb.ObjectId(req.params.id)});
     res.send(result);
 });
 
